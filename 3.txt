@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+df=pd.read_csv("iris.csv")
+df.head()
+df
+
+df.describe()
+df.isnull()
+df.isnull().sum()
+
+df['Species']=df['Species'].map({ 'Iris-setosa':0, 'Iris-virginica':1,'Iris-versicolor':2})
+df
+
+df.head()
+df.mean()
+df.median()
+df.mode()
+df.min()
+df.max()
+df.var()
+df.std()
+
+grouped=df.groupby('Species')
+grouped.mean()
