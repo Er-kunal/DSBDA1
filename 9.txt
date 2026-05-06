@@ -1,0 +1,49 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=sns.load_dataset('titanic')
+#df=pd.read_csv("titanic.csv")  
+df
+df.head()
+df.tail()
+df.describe()
+df.info()
+
+sns.boxplot(y=df['age'])
+plt.title('Boxplot of age')
+plt.show()
+
+sns.boxplot(y=df['fare'])
+plt.title('Boxplot of Fare')
+plt.show()
+
+sns.boxplot(x='sex',y='age',hue='survived',data=df)
+plt.title('Age vs Gender vs Survival')
+plt.xlabel("Gender")
+plt.ylabel("Age")
+plt.show()
+
+sns.boxplot(y=df['fare'])
+plt.show()
+
+4. Identify Outliers
+Boxplot automatically shows outliers as points outside whiskers.
+
+🔹 5. Observations
+1. Boxplot of Age
+
+The age boxplot shows the distribution of passenger ages. Most passengers are between young adult and middle age. Some very young and older passengers may appear as outliers.
+
+2. Boxplot of Fare
+
+The fare boxplot shows that most passengers paid lower fares, but some passengers paid very high fares. These high fare values are outliers.
+
+3. Age vs Gender vs Survival
+
+This boxplot compares age with gender and survival status.
+
+🔹 6. Inferences
+Both male and female passengers are compared based on age.
+Survival patterns differ between males and females.
+Female passengers generally had better survival chances than male passengers.
+Age distribution varies slightly among survived and non-survived passengers.
