@@ -1,0 +1,41 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=pd.read_csv("titanic.csv")  
+df
+df.head()
+df.tail()
+df.info()
+df['Fare'].describe()
+plt.figure()
+sns.histplot(df['Fare'],bins=30,kde=True)
+plt.title('Fare Distribution')
+plt.xlabel('Fare')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure()
+sns.boxplot(x='Survived',y='Fare',data=df)
+plt.title('Fare vs Survived ')
+plt.show()
+
+plt.figure()
+sns.boxplot(x='Pclass',y='Fare',data=df)
+plt.title('Pclass Vs Fare')
+plt.show()
+
+print(df['Fare'].skew())
+
+🔹 4. Analyze Distribution
+Most passengers paid low fares (0–50 range)
+Very few passengers paid high fares (above 100)
+The data is not evenly distributed
+
+5. Identify Skewness
+
+👉 The Fare distribution is positively skewed (right-skewed)
+
+Meaning:
+
+Tail is longer on the right side
+Few passengers paid very high fares
